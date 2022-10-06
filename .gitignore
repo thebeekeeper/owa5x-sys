@@ -1,2 +1,4 @@
 usr/**
 target/**
+/target
+Cargo.lock

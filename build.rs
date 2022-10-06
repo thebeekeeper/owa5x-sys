@@ -4,9 +4,6 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    // Tell cargo to tell rustc to link the system bzip2
-    // shared library.
-    //println!("cargo:rustc-link-lib=bz2");
     println!("cargo:rustc-link-search=native=/opt/owa-lib/lib/");
     println!("cargo:rustc-link-lib=RTU_Module");
     println!("cargo:rustc-link-lib=IOs_Module");
@@ -16,10 +13,6 @@ fn main() {
     println!("cargo:rustc-link-lib=asound");
     println!("cargo:rustc-link-lib=udev");
 
-    // The bindgen::Builder is the main entry point
-    // to bindgen, and lets you build up options for
-    // the resulting bindings.
-    //let bindings = bindgen::Builder::default()
     let bindings = bindgen::builder()
         .derive_default(true)
         // Do not generate unstable Rust code that
